@@ -3,7 +3,8 @@
 " don't make vim compatible with vi 
 set nocompatible
 
-set tags=./tags;/
+" let vim find tags file easily
+set tags=./tags,tags;/
 
 " turn on syntax highlighting
 syntax on
@@ -173,6 +174,7 @@ Plugin 'groenewege/vim-less'
 Plugin 'skammer/vim-css-color'      
 Plugin 'hail2u/vim-css3-syntax'     
 Plugin 'digitaltoad/vim-jade'       
+Plugin 'altercation/vim-colors-solarized'
 
 " end plugin definition
 call vundle#end()            " required for vundle
@@ -193,8 +195,18 @@ let g:user_emmet_leader_key = '<c-e>'
 autocmd BufWritePost *.js silent :JSHint
 
 " set the color theme to wombat256
-colorscheme wombat256mod
 " make a mark for column 80
 "set colorcolumn=80
 " and set the mark color to DarkSlateGray
-highlight ColorColumn ctermbg=lightgray guibg=lightgray
+" highlight ColorColumn ctermbg=lightgray guibg=lightgray
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+" solarized options
+let g:solarized_termcolors=256
+set t_Co=256
+colorscheme solarized
+" colorscheme wombat256mod
+
