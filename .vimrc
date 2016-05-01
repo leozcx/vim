@@ -209,4 +209,5 @@ let g:solarized_termcolors=256
 set t_Co=256
 colorscheme solarized
 " colorscheme wombat256mod
-
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
