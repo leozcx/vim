@@ -1,5 +1,4 @@
 
-
 " don't make vim compatible with vi 
 set nocompatible
 
@@ -117,7 +116,7 @@ set shiftwidth=4    " when reading, tabs are 4 spaces
 set softtabstop=4   " in insert mode, tabs are 4 spaces
 
 " no lines longer than 80 cols
-set textwidth=80
+set textwidth=180
 
 " use <C-Space> for Vim's keyword autocomplete
 "  ...in the terminal
@@ -211,3 +210,8 @@ colorscheme solarized
 " colorscheme wombat256mod
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+
+"change word to uppercase, I love this very much
+inoremap <C-u> <Esc>gUiw
+
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
