@@ -169,11 +169,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'Shutnik/jshint2.vim'        
 Plugin 'mattn/emmet-vim'            
 Plugin 'kchmck/vim-coffee-script'   
-Plugin 'groenewege/vim-less'        
-Plugin 'skammer/vim-css-color'      
+" Plugin 'groenewege/vim-less'        
+" Plugin 'skammer/vim-css-color'      
 Plugin 'hail2u/vim-css3-syntax'     
 Plugin 'digitaltoad/vim-jade'       
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'Valloric/YouCompleteMe'
 
 " end plugin definition
 call vundle#end()            " required for vundle
@@ -215,3 +216,4 @@ nmap <CR> o<Esc>
 inoremap <C-u> <Esc>gUiw
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+

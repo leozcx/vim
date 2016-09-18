@@ -92,3 +92,6 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
+
+alias myvm='ssh root@10.94.98.94'
+export HOMEBREW_GITHUB_API_TOKEN=07268dce884a68e7d331f96097df93e57c88ea16
