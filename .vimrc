@@ -53,6 +53,10 @@ set lazyredraw
 " set , as mapleader
 let mapleader = ","
 
+if executable('ag')
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+
 " map <leader>q and <leader>w to buffer prev/next buffer
 noremap <leader>q :bp<CR>
 noremap <leader>w :bn<CR>
@@ -175,6 +179,9 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'digitaltoad/vim-jade'       
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'posva/vim-vue'
+Plugin 'mileszs/ack.vim'
+
 
 " end plugin definition
 call vundle#end()            " required for vundle
