@@ -2,6 +2,7 @@
 " don't make vim compatible with vi 
 set nocompatible
 
+
 " let vim find tags file easily
 set tags=./tags,tags;/
 
@@ -116,8 +117,8 @@ set scrolloff=3
 set expandtab       " use spaces instead of tabs
 set autoindent      " autoindent based on line above, works most of the time
 set smartindent     " smarter indent for C-like languages
-set shiftwidth=4    " when reading, tabs are 4 spaces
-set softtabstop=4   " in insert mode, tabs are 4 spaces
+set shiftwidth=2    " when reading, tabs are 4 spaces
+set softtabstop=2   " in insert mode, tabs are 4 spaces
 
 " no lines longer than 80 cols
 set textwidth=180
@@ -161,6 +162,7 @@ let &runtimepath.=',$HOME/.vim/bundle/Vundle.vim'
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'ucompleteme'
 
 " start plugin defintion
 Plugin 'scrooloose/nerdtree'
@@ -173,15 +175,18 @@ Plugin 'tpope/vim-surround'
 Plugin 'Shutnik/jshint2.vim'        
 Plugin 'mattn/emmet-vim'            
 Plugin 'kchmck/vim-coffee-script'   
+Plugin 'othree/yajs.vim'
+Plugin 'othree/html5.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
 " Plugin 'groenewege/vim-less'        
 " Plugin 'skammer/vim-css-color'      
 Plugin 'hail2u/vim-css3-syntax'     
 Plugin 'digitaltoad/vim-jade'       
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'posva/vim-vue'
 Plugin 'mileszs/ack.vim'
-
+Plugin 'Yggdroot/indentLine'
+Plugin 'stephenway/postcss.vim'
+" Plugin 'posva/vim-vue'
 
 " end plugin definition
 call vundle#end()            " required for vundle
@@ -199,7 +204,7 @@ let g:user_emmet_leader_key = '<c-e>'
 
 " run JSHint when a file with .js extension is saved
 " this requires the jsHint2 plugin
-autocmd BufWritePost *.js silent :JSHint
+" autocmd BufWritePost *.js silent :JSHint
 
 " set the color theme to wombat256
 " make a mark for column 80
@@ -223,4 +228,7 @@ nmap <CR> o<Esc>
 inoremap <C-u> <Esc>gUiw
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+execute pathogen#infect()
 
+au BufRead,BufNewFile *.vue set ft=html
+au BufRead,BufNewFile *.postcss set ft=postcss
